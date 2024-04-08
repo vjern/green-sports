@@ -1,4 +1,4 @@
-# Skillcorner
+# Green Sports Technical Screening
 
 Run with
 
