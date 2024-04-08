@@ -8,18 +8,18 @@ from typing import Iterable
 def process(data: Iterable[str]) -> Iterable[str]:
     for i, row in enumerate(data):
         row = row.strip()
+        new_data = "Rien à afficher"
         if not i % 5:
-            yield "Multiple de 5"
+            new_data = "Multiple de 5"
         elif "$" in row:
-            yield re.sub(r"\s", "_", row)
+            new_data = re.sub(r"\s", "_", row)
         elif row.endswith("."):
-            yield row
+            new_data = row
         elif row.startswith("{"):
             decoded = json.loads(row)
             decoded["pair"] = not i % 2
-            yield json.dumps(decoded)
-        else:
-            yield "Rien à afficher"
+            new_data = json.dumps(decoded)
+        yield new_data
 
 
 def main(argv: list[str] = sys.argv[1:]):
