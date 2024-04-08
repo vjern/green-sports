@@ -1,0 +1,13 @@
+Écrire un programme python qui prend comme argument le fichier data.log et qui pour chaque ligne de ce fichier d'entrée, affiche à l'écran une ligne au format : "LINE_NUMBER : NEW_DATA"
+
+Calcul de LINE_NUMBER : Il s'agit du numéro de ligne du fichier d'entrée, la première ligne correspond au numéro 0.
+
+Calcul de NEW_DATA : en fonction des cas suivants
+
+        - Si LINE_NUMBER est un multiple de 5, NEW_DATA vaut "Multiple de 5" (sachant que 0 est un multiple de tout nombre entier)
+        - Si la ligne d'entrée contient au moins un caractère '$', remplacer tous les caractères espace par '_' et affecter le résultat à NEW_DATA
+        - Si la ligne se termine par le caractère '.' (sans prendre en compte les caractères de fin de ligne \r et \n), NEW_DATA = la ligne d'entrée
+        - Si le premier caractère de la ligne d'entrée est '{', désérialiser la ligne qui est au format json, ajouter la clé 'pair' au dictionnaire avec True comme valeur si LINE_NUMBER est pair (False sinon). Ensuite sérialiser ce nouveau dictionnaire en json et affecter le résultat à NEW_DATA
+        - Si aucune des conditions précédentes n'est validée, NEW_DATA vaut 'Rien à afficher'   
+
+        Si pour le calcul de NEW_DATA, plusieurs règles sont vraies, alors seule la règle la plus en haut de la liste s'applique.
