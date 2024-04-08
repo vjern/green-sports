@@ -44,7 +44,9 @@ def test_rules():
                 json.dumps({"a": 3}),
                 json.dumps({"b": 4}),
                 f"The price is $$$\ttoo expensive?",
+                "$$$ a $$$",
                 "no condition",
+                json.dumps({"b": 5}) + ".",
             ]
         )
     ) == [
@@ -54,6 +56,8 @@ def test_rules():
         json.dumps({"b": 4, "pair": False}),
         "The_price_is_$$$_too_expensive?",
         "Multiple de 5",
+        "Rien à afficher",
+        json.dumps({"b": 5}) + ".",
     ]
 
 
