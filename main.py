@@ -31,8 +31,8 @@ def main(argv: list[str] = sys.argv[1:]):
 
     with open(args.filepath) as f:
         data = process(f)
-        for row in data:
-            print(row)
+        for i, row in enumerate(data):
+            print(f"{i} : {row}")
 
 
 def test_rules():
